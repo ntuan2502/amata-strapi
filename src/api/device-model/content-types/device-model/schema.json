@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "device_models",
+  "info": {
+    "singularName": "device-model",
+    "pluralName": "device-models",
+    "displayName": "Device Model"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "equipment_inventories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::equipment-inventory.equipment-inventory",
+      "mappedBy": "device_model"
+    }
+  }
+}

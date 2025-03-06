@@ -1,0 +1,102 @@
+{
+  "kind": "collectionType",
+  "collectionName": "equipment_inventories",
+  "info": {
+    "singularName": "equipment-inventory",
+    "pluralName": "equipment-inventories",
+    "displayName": "Equipment Inventory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::employee.employee",
+      "inversedBy": "equipment_inventories"
+    },
+    "device_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::device-type.device-type",
+      "inversedBy": "equipment_inventories"
+    },
+    "device_model": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::device-model.device-model",
+      "inversedBy": "equipment_inventories"
+    },
+    "serial_number": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "mac_address": {
+      "type": "string",
+      "required": true
+    },
+    "cpu": {
+      "type": "string"
+    },
+    "ram": {
+      "type": "string"
+    },
+    "hard_drive": {
+      "type": "string"
+    },
+    "supplier": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::supplier.supplier",
+      "inversedBy": "equipment_inventories"
+    },
+    "purchase_date": {
+      "type": "date",
+      "required": true
+    },
+    "warranty_duration": {
+      "type": "enumeration",
+      "enum": [
+        "one year",
+        "two years",
+        "three years",
+        "four years",
+        "five years"
+      ],
+      "required": true
+    },
+    "device_status": {
+      "type": "enumeration",
+      "enum": [
+        "available",
+        "donation",
+        "in using",
+        "liquidation",
+        "lost",
+        "waiting for disposal"
+      ],
+      "required": true
+    },
+    "comment": {
+      "type": "blocks"
+    },
+    "files": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

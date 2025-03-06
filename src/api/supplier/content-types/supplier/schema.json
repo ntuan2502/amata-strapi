@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "suppliers",
+  "info": {
+    "singularName": "supplier",
+    "pluralName": "suppliers",
+    "displayName": "Supplier",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "equipment_inventories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::equipment-inventory.equipment-inventory",
+      "mappedBy": "supplier"
+    }
+  }
+}
