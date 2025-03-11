@@ -1,0 +1,25 @@
+import type { StrapiApp } from "@strapi/strapi/admin";
+import logo from "./extensions/Amata.png";
+
+export default {
+  config: {
+    auth: {
+      logo,
+    },
+    head: {
+      favicon: logo,
+    },
+    menu: {
+      logo,
+    },
+    translations: {
+      en: {
+        "Auth.form.welcome.title": "Welcome to Amata",
+        "Auth.form.welcome.subtitle": "From IT Team with love",
+      },
+    },
+  },
+  bootstrap(app: StrapiApp) {
+    console.log(app);
+  },
+};
