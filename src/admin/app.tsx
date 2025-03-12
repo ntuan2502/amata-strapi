@@ -16,6 +16,7 @@ export default {
       en: {
         "Auth.form.welcome.title": "Welcome to Amata",
         "Auth.form.welcome.subtitle": "From IT Team with love",
+        "HomePage.head.title": "Welcome to Amata",
       },
     },
   },
